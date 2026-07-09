@@ -1,0 +1,280 @@
+================================================================
+        FINTRACK - PERSONAL EXPENSE TRACKER
+        VERCEL DEPLOYMENT GUIDE
+================================================================
+
+Project Name   : FinTrack - Personal Expense Tracker
+Prepared By    : [Your Name]
+Date           : July 2026
+Version        : 1.0
+
+================================================================
+1. WHAT IS VERCEL
+================================================================
+
+Vercel is a free cloud platform to host and deploy web projects.
+It gives you a live public URL that anyone can open in a browser.
+
+Free Plan includes:
+  - Unlimited personal projects
+  - Free HTTPS (SSL) URL
+  - Auto deploy when you push to GitHub
+  - Custom domain support
+  - No credit card required
+
+Your app will be live at:
+  https://fintrack-expense-tracker.vercel.app
+
+================================================================
+2. PRE-REQUISITES BEFORE DEPLOYING
+================================================================
+
+  [✅] expense-tracker.html file is ready
+  [✅] GitHub account created (github.com)
+  [✅] Repository created on GitHub
+  [✅] Code pushed to GitHub main branch
+  [✅] Vercel account created (vercel.com)
+
+================================================================
+3. FOLDER STRUCTURE BEFORE DEPLOY
+================================================================
+
+Your GitHub repository should look like this:
+
+  fintrack-expense-tracker/
+  │
+  ├── expense-tracker.html     <- main app file
+  └── README.md                <- project description (optional)
+
+  NOTE: No package.json or node_modules needed.
+        It is a pure HTML project.
+
+================================================================
+4. STEP BY STEP - DEPLOY ON VERCEL
+================================================================
+
+----------------------------------
+STEP 1: Create Vercel Account
+----------------------------------
+
+  1. Go to https://vercel.com
+  2. Click "Sign Up"
+  3. Choose "Continue with GitHub"
+  4. Authorize Vercel to access your GitHub
+  5. You are now logged in to Vercel
+
+----------------------------------
+STEP 2: Import GitHub Repository
+----------------------------------
+
+  1. On Vercel dashboard click "Add New Project"
+  2. Click "Import Git Repository"
+  3. You will see your GitHub repos listed
+  4. Find "fintrack-expense-tracker"
+  5. Click "Import" next to it
+
+----------------------------------
+STEP 3: Configure Project Settings
+----------------------------------
+
+  Framework Preset : Select "Other"
+                     (Not Next.js or React - it is plain HTML)
+
+  Root Directory   : Leave as default ( ./ )
+
+  Build Command    : LEAVE EMPTY (no build needed)
+
+  Output Directory : LEAVE EMPTY (no build needed)
+
+  Install Command  : LEAVE EMPTY (no npm install needed)
+
+  Click "Deploy" button
+
+----------------------------------
+STEP 4: Wait for Deployment
+----------------------------------
+
+  - Vercel will show a progress screen
+  - Usually takes 30 to 60 seconds
+  - You will see confetti animation when done 🎉
+
+----------------------------------
+STEP 5: Get Your Live URL
+----------------------------------
+
+  After deployment Vercel gives you a URL like:
+  https://fintrack-expense-tracker.vercel.app
+
+  Or with a random name like:
+  https://fintrack-expense-tracker-abc123.vercel.app
+
+  Click "Visit" to open your live app.
+
+================================================================
+5. HOW TO ACCESS YOUR DEPLOYED APP
+================================================================
+
+  Direct URL : https://fintrack-expense-tracker.vercel.app
+
+  To open expense-tracker.html directly:
+  https://fintrack-expense-tracker.vercel.app/expense-tracker.html
+
+  NOTE: If your file is named index.html it opens automatically.
+        Since ours is expense-tracker.html add /expense-tracker.html
+        at the end of the URL.
+
+  TIP: Rename expense-tracker.html to index.html so the URL
+       works without the filename at the end.
+
+================================================================
+6. RENAME FILE TO INDEX.HTML (RECOMMENDED)
+================================================================
+
+  On your local machine:
+    - Rename expense-tracker.html to index.html
+
+  Then push to GitHub:
+
+    git add .
+    git commit -m "Rename to index.html for cleaner URL"
+    git push
+
+  Vercel will auto-redeploy in about 30 seconds.
+
+  Now your app opens at:
+    https://fintrack-expense-tracker.vercel.app
+    (no filename needed at the end)
+
+================================================================
+7. AUTO DEPLOYMENT (BEST FEATURE)
+================================================================
+
+After first deploy Vercel watches your GitHub repo.
+
+Every time you push new code to GitHub:
+  - Vercel automatically redeploys
+  - New version is live in about 30-60 seconds
+  - No manual steps needed
+
+Example workflow:
+  1. Fix a bug in your code
+  2. git add . && git commit -m "Fix budget bug"
+  3. git push
+  4. Vercel deploys automatically ✅
+
+================================================================
+8. CUSTOM DOMAIN (OPTIONAL - FREE)
+================================================================
+
+If you have your own domain (e.g. from Namecheap or GoDaddy):
+
+  1. Go to Vercel Dashboard
+  2. Click your project
+  3. Go to Settings > Domains
+  4. Add your custom domain
+  5. Update DNS settings at your domain provider
+  6. Done - your app runs on your own domain
+
+Example: https://fintrack.yourdomain.com
+
+================================================================
+9. VERCEL DASHBOARD OVERVIEW
+================================================================
+
+After deployment your Vercel dashboard shows:
+
+  Project Name  : fintrack-expense-tracker
+  Status        : Ready (green)
+  Domain        : fintrack-expense-tracker.vercel.app
+  Last Deploy   : [date and time]
+  Git Branch    : main
+
+  Tabs available:
+    Deployments : History of all deploys
+    Settings    : Project configuration
+    Analytics   : Page view statistics
+    Logs        : Build and runtime logs
+
+================================================================
+10. SHARING YOUR PROJECT
+================================================================
+
+Share these links:
+
+  Live App URL:
+  https://fintrack-expense-tracker.vercel.app
+
+  GitHub Repository:
+  https://github.com/YOUR_USERNAME/fintrack-expense-tracker
+
+For Resume / Portfolio:
+  Project  : FinTrack - Personal Expense Tracker
+  Live URL : https://fintrack-expense-tracker.vercel.app
+  GitHub   : https://github.com/YOUR_USERNAME/fintrack-expense-tracker
+  Tech     : HTML, CSS, JavaScript, Chart.js
+
+For LinkedIn Post:
+  "Just deployed my Personal Finance Tracker built with
+  vanilla HTML, CSS and JavaScript! Features include
+  full CRUD, Chart.js analytics, budget alerts, dark mode
+  and CSV export. Live on Vercel 🚀
+  Check it out: [your URL]
+  #webdevelopment #javascript #frontend #html #css"
+
+================================================================
+11. TROUBLESHOOTING
+================================================================
+
+PROBLEM : App shows 404 error after deploy
+SOLUTION: Check if file is named index.html or add
+          /expense-tracker.html to the end of URL
+
+PROBLEM : Charts not loading
+SOLUTION: Chart.js loads from CDN - need internet connection
+          Check CDN link in HTML file is correct
+
+PROBLEM : Data not saving
+SOLUTION: localStorage works per browser per domain.
+          This is expected behavior.
+
+PROBLEM : Vercel says Build Failed
+SOLUTION: Our project has no build step. Make sure
+          Framework Preset is set to "Other"
+          Build Command is empty
+          Output Directory is empty
+
+PROBLEM : Old version still showing after git push
+SOLUTION: Wait 60 seconds. Hard refresh browser (Ctrl+Shift+R)
+          Check Vercel dashboard for latest deployment status
+
+================================================================
+12. DEPLOYMENT CHECKLIST
+================================================================
+
+  [ ] GitHub repo created and code pushed
+  [ ] Vercel account created with GitHub login
+  [ ] Project imported in Vercel
+  [ ] Framework set to "Other"
+  [ ] Build and output fields left empty
+  [ ] Clicked Deploy
+  [ ] Deployment successful (confetti shown)
+  [ ] Live URL opens the app correctly
+  [ ] Tested app on live URL
+  [ ] Shared URL with friends / guide / on LinkedIn
+  [ ] Added live URL to GitHub README
+  [ ] Added live URL to resume/portfolio
+
+================================================================
+13. FINAL LIVE URL FORMAT
+================================================================
+
+  Format  : https://[project-name].vercel.app
+  Example : https://fintrack-expense-tracker.vercel.app
+
+  Add to your GitHub README:
+    ## Live Demo
+    https://fintrack-expense-tracker.vercel.app
+
+================================================================
+END OF VERCEL DEPLOYMENT GUIDE
+================================================================

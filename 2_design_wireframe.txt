@@ -1,0 +1,308 @@
+================================================================
+        FINTRACK - PERSONAL EXPENSE TRACKER
+        DESIGN DOCUMENT (PAPER WIREFRAME)
+================================================================
+
+Project Name   : FinTrack - Personal Expense Tracker
+Prepared By    : [Your Name]
+Date           : July 2026
+Version        : 1.0
+
+NOTE: This is a text-based wireframe. Draw these on paper
+      before starting to code. No Figma needed.
+
+================================================================
+1. OVERALL LAYOUT
+================================================================
+
++------------------+----------------------------------+
+|                  |         TOP BAR                  |
+|    SIDEBAR       |----------------------------------|
+|                  |                                  |
+|  LOGO            |         PAGE CONTENT             |
+|                  |         (changes based on        |
+|  - Dashboard     |          sidebar selection)      |
+|  - Add           |                                  |
+|  - History       |                                  |
+|  - Analytics     |                                  |
+|  - Budget        |                                  |
+|                  |                                  |
+|  [Export CSV]    |                                  |
+|  [Dark Mode]     |                                  |
++------------------+----------------------------------+
+
+Sidebar Width  : 260px (fixed on desktop)
+Main Content   : remaining width (flexible)
+
+================================================================
+2. SIDEBAR DESIGN
+================================================================
+
++------------------------+
+|  [💰]  FinTrack        |
+|        Personal Finance|
++------------------------+
+|  MENU                  |
+|                        |
+|  📊  Dashboard         |  <-- highlighted when active
+|  ➕  Add Transaction   |
+|  📋  History           |
+|  📈  Analytics         |
+|  🎯  Budget Goals      |
+|                        |
++------------------------+
+|  [⬇ Export CSV]       |
+|  [🌙 Dark Mode  ( ) ] |
++------------------------+
+
+================================================================
+3. TOP BAR DESIGN
+================================================================
+
++------------------------------------------------+
+|  Dashboard              [Export CSV] [+ Add]   |
++------------------------------------------------+
+
+- Left  : Current page title
+- Right : Quick action buttons
+
+================================================================
+4. SECTION 1 - DASHBOARD
+================================================================
+
++---------------+  +---------------+  +---------------+
+|  Total        |  |  Total        |  |  Total        |
+|  Balance      |  |  Income       |  |  Expenses     |
+|               |  |               |  |               |
+|  ₹57,000      |  |  ₹57,000      |  |  ₹10,478      |
+|  💚 Positive  |  |  5 trans..    |  |  8 trans..    |
++---------------+  +---------------+  +---------------+
+
+Blue border top    Green border top    Red border top
+
++--------------------------------------------------+
+|  Spending vs Income                        45%   |
+|  You have used 45% of your monthly budget        |
+|  [=============================           ]      |
+|  Spent: ₹10,478          Budget: ₹23,000         |
++--------------------------------------------------+
+
++-------------------------+  +-------------------------+
+|  Recent Transactions    |  |  Top Expense Categories |
+|                         |  |                         |
+|  💼 Salary   +₹45,000  |  |  🍔 Food     [======]  |
+|  🍔 Grocery  -₹1,850   |  |  🛍️ Shopping [====  ]  |
+|  📄 Bill     -₹1,200   |  |  📄 Bills    [===   ]  |
+|  🎬 Netflix  -₹649     |  |  🎬 Entert.. [==    ]  |
+|  🚌 Auto     -₹320     |  |  🚌 Transport[=     ]  |
++-------------------------+  +-------------------------+
+
+================================================================
+5. SECTION 2 - ADD TRANSACTION FORM
+================================================================
+
++--------------------------------------------+
+|  New Transaction                           |
+|  Fill in the details. All fields required  |
+|                                            |
+|  TRANSACTION TYPE                          |
+|  +------------------+------------------+  |
+|  |  📈 Income  ✅   |    📉 Expense    |  |
+|  +------------------+------------------+  |
+|                                            |
+|  TRANSACTION NAME                          |
+|  +--------------------------------------+  |
+|  |  e.g. Salary, Grocery, Netflix...   |  |
+|  +--------------------------------------+  |
+|                                            |
+|  AMOUNT (₹)          DATE                 |
+|  +----------------+  +----------------+   |
+|  |  0.00          |  |  07/07/2026    |   |
+|  +----------------+  +----------------+   |
+|                                            |
+|  CATEGORY                                  |
+|  +--------------------------------------+  |
+|  |  -- Select a category --          ▼ |  |
+|  +--------------------------------------+  |
+|                                            |
+|  +---------------------------+  [Reset]   |
+|  |   ✅ Add Transaction      |            |
+|  +---------------------------+            |
++--------------------------------------------+
+
+Validation Rules:
+- Name    : Cannot be empty
+- Amount  : Must be greater than 0
+- Date    : Must be selected
+- Category: Must be selected
+
+================================================================
+6. SECTION 3 - TRANSACTION HISTORY
+================================================================
+
++--------+  +---------+  +--------+  +-------+  +-------+
+| Search |  | Cat ▼   |  | Type ▼ |  | From  |  | To    |
++--------+  +---------+  +--------+  +-------+  +-------+
+
+Header : 24 transactions found          [🗑 Clear All]
+
++-----------------------------------------------------+
+|  💼  Monthly Salary          08 Jul 2026  [Salary]  |
+|      +₹45,000                             ✏️  🗑️   |
+|-----------------------------------------------------|
+|  🍔  Grocery Shopping        07 Jul 2026  [Food]    |
+|      -₹1,850                              ✏️  🗑️   |
+|-----------------------------------------------------|
+|  📄  Electricity Bill        06 Jul 2026  [Bills]   |
+|      -₹1,200                              ✏️  🗑️   |
+|-----------------------------------------------------|
+|  🎬  Netflix                 05 Jul 2026  [Entert]  |
+|      -₹649                                ✏️  🗑️   |
++-----------------------------------------------------+
+
+Green amount = Income
+Red amount   = Expense
+
+================================================================
+7. EDIT MODAL POPUP
+================================================================
+
++------------------------------------------+
+|  ✏️ Edit Transaction              [✕]    |
+|                                          |
+|  TYPE                                    |
+|  [ 📈 Income ] [ 📉 Expense ]           |
+|                                          |
+|  NAME                                    |
+|  [ Monthly Salary                    ]   |
+|                                          |
+|  AMOUNT         DATE                     |
+|  [ 45000    ]   [ 2026-07-01        ]   |
+|                                          |
+|  CATEGORY                                |
+|  [ 💼 Salary                        ▼]  |
+|                                          |
+|              [Cancel] [💾 Save Changes] |
++------------------------------------------+
+
+================================================================
+8. SECTION 4 - ANALYTICS
+================================================================
+
++-------------------------+  +-------------------------+
+|  📊 Expenses by         |  |  📅 Monthly Income vs   |
+|     Category            |  |     Expense             |
+|                         |  |                         |
+|       [PIE CHART]       |  |      [BAR CHART]        |
+|                         |  |                         |
+|   🟠 Food    30%        |  |   Green bars = Income   |
+|   🔵 Bills   18%        |  |   Red bars   = Expense  |
+|   🟣 Shop    15%        |  |                         |
+|   🔴 Entert  12%        |  |   May  Jun  Jul         |
+|   ...                   |  |                         |
++-------------------------+  +-------------------------+
+
+================================================================
+9. SECTION 5 - BUDGET GOALS
+================================================================
+
++-------------------------+  +-------------------------+
+|  🎯 Set Monthly Budget  |  |  📊 Budget Overview     |
+|                         |  |                         |
+|  MONTHLY BUDGET (₹)     |  |  Monthly Budget  ₹23000 |
+|  [ 23000           ]    |  |  This Month Exp  ₹10478 |
+|                         |  |  Remaining       ₹12522 |
+|  [💾 Save Budget]       |  |  Budget Used     45.6%  |
+|                         |  |                         |
+|  ⚠️ Warning box         |  |  [=========     ]       |
+|  (shows at 80%)         |  |  progress bar           |
+|                         |  |                         |
+|  🚨 Alert box           |  |                         |
+|  (shows at 100%)        |  |                         |
++-------------------------+  +-------------------------+
+
+================================================================
+10. TOAST NOTIFICATION DESIGN
+================================================================
+
+Bottom Right Corner of screen:
+
++--------------------------------+
+|  ✅  Transaction added!        |  <- Green left border
++--------------------------------+
+
++--------------------------------+
+|  ⚠️  80% of budget used!      |  <- Yellow left border
++--------------------------------+
+
++--------------------------------+
+|  ❌  Please fill all fields    |  <- Red left border
++--------------------------------+
+
++--------------------------------+
+|  ℹ️  Transaction updated!     |  <- Blue left border
++--------------------------------+
+
+Toast disappears after 3.2 seconds automatically.
+
+================================================================
+11. MOBILE LAYOUT (below 720px)
+================================================================
+
++----------------------------------+
+|  [☰]  FinTrack        [Export]  |  <- Mobile top bar
++----------------------------------+
+|                                  |
+|  +----------------------------+  |
+|  |  Balance  ₹57,000         |  |
+|  +----------------------------+  |
+|                                  |
+|  +------------+ +------------+  |
+|  | Income     | | Expense    |  |
+|  | ₹57,000    | | ₹10,478    |  |
+|  +------------+ +------------+  |
+|                                  |
+|   [Progress Bar full width]      |
+|                                  |
+|   Recent Transactions            |
+|   (full width list)              |
+|                                  |
++----------------------------------+
+
+Sidebar slides in from left when ☰ is tapped.
+Dark overlay appears behind sidebar.
+
+================================================================
+12. COLOR SCHEME
+================================================================
+
+DARK MODE:
+  Background    : #0d0f14  (very dark navy)
+  Card          : #1a1e2a
+  Text          : #f0f2f7
+  Income color  : #48bb78  (green)
+  Expense color : #fc8181  (red/pink)
+  Accent        : #63b3ed  (blue)
+  Gold          : #f6c90e  (logo)
+
+LIGHT MODE:
+  Background    : #f4f6fb
+  Card          : #ffffff
+  Text          : #111827
+  Income color  : #059669  (darker green)
+  Expense color : #dc2626  (darker red)
+  Accent        : #3b82f6  (blue)
+
+================================================================
+13. FONTS USED
+================================================================
+
+Display Font : Syne (headings, amounts, titles)
+              Weights: 400, 600, 700, 800
+
+Body Font    : DM Sans (paragraphs, labels, buttons)
+              Weights: 300, 400, 500, 600
+
+================================================================
+END OF DESIGN DOCUMENT
+================================================================

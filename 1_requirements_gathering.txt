@@ -1,0 +1,158 @@
+================================================================
+        FINTRACK - PERSONAL EXPENSE TRACKER
+        REQUIREMENTS GATHERING DOCUMENT
+================================================================
+
+Project Name   : FinTrack - Personal Expense Tracker
+Prepared By    : [Your Name]
+Date           : July 2026
+Version        : 1.0
+
+================================================================
+1. PROJECT OVERVIEW
+================================================================
+
+FinTrack is a browser-based personal finance tracker that helps
+users manage their daily income and expenses. No backend or
+login required. All data is saved in the browser using
+localStorage.
+
+================================================================
+2. STAKEHOLDERS
+================================================================
+
+- Developer     : [Your Name]
+- End User      : Anyone who wants to track personal finances
+- Reviewer      : [College Guide / Interviewer]
+
+================================================================
+3. FUNCTIONAL REQUIREMENTS
+================================================================
+
+FR-01  User can add a new transaction (income or expense)
+FR-02  User can edit an existing transaction
+FR-03  User can delete a transaction
+FR-04  User can view all transactions in a list
+FR-05  User can search transactions by name or category
+FR-06  User can filter transactions by category, type, date
+FR-07  User can see total balance, income and expense summary
+FR-08  User can view expense breakdown in a pie chart
+FR-09  User can view monthly income vs expense in a bar chart
+FR-10  User can set a monthly budget limit
+FR-11  User gets a warning when 80% of budget is used
+FR-12  User gets an alert when budget is exceeded
+FR-13  User can export all transactions as a CSV file
+FR-14  User can toggle between dark mode and light mode
+FR-15  All data must be saved and available after page refresh
+
+================================================================
+4. NON FUNCTIONAL REQUIREMENTS
+================================================================
+
+NFR-01  App must work on mobile, tablet and desktop screens
+NFR-02  App must load without any internet (except fonts/charts)
+NFR-03  No login or registration required
+NFR-04  Page load time should be under 2 seconds
+NFR-05  UI should be clean, modern and easy to use
+NFR-06  Form must validate all inputs before saving
+NFR-07  App should show success and error toast notifications
+
+================================================================
+5. TECHNICAL REQUIREMENTS
+================================================================
+
+TECH-01  Language     : HTML5, CSS3, Vanilla JavaScript only
+TECH-02  Charts       : Chart.js library (CDN)
+TECH-03  Fonts        : Google Fonts (Syne + DM Sans)
+TECH-04  Storage      : Browser localStorage
+TECH-05  No framework : No React, Angular or Vue
+TECH-06  No backend   : No Node.js, no database, no API
+TECH-07  Deployment   : Vercel (single HTML file)
+
+================================================================
+6. TRANSACTION FIELDS
+================================================================
+
+Each transaction will store the following data:
+
+- ID          : Unique number (auto generated)
+- Name        : Transaction description (text)
+- Type        : Income or Expense
+- Category    : Salary / Freelance / Food / Transport /
+                Shopping / Entertainment / Bills /
+                Health / Education / Other
+- Amount      : Positive number (in Rupees)
+- Date        : Date of transaction (YYYY-MM-DD)
+
+================================================================
+7. CATEGORIES DEFINED
+================================================================
+
+INCOME Categories:
+  - Salary
+  - Freelance
+
+EXPENSE Categories:
+  - Food
+  - Transport
+  - Shopping
+  - Entertainment
+  - Bills
+  - Health
+  - Education
+  - Other
+
+================================================================
+8. PAGES / SECTIONS IN APP
+================================================================
+
+Section 1 : Dashboard
+           - Balance card, Income card, Expense card
+           - Spending progress bar
+           - Recent 5 transactions
+           - Top expense categories
+
+Section 2 : Add Transaction
+           - Form with all fields
+           - Validation on submit
+
+Section 3 : Transaction History
+           - Full list of all transactions
+           - Search bar
+           - Filters (category, type, date range)
+           - Edit and Delete buttons
+
+Section 4 : Analytics
+           - Pie chart (expense by category)
+           - Bar chart (monthly income vs expense)
+
+Section 5 : Budget Goals
+           - Input to set monthly budget
+           - Overview stats
+           - Warning and alert messages
+
+================================================================
+9. OUT OF SCOPE (Not included in this version)
+================================================================
+
+- User login / authentication
+- Cloud sync or backend API
+- Multiple currency support
+- Recurring transactions
+- Bank statement import
+- Email reports or notifications
+- Mobile app (Android / iOS)
+
+================================================================
+10. FUTURE ENHANCEMENTS (Next Version)
+================================================================
+
+- Add user login with Node.js + MongoDB
+- Recurring transaction support
+- PDF export
+- Multi-currency support
+- PWA (Progressive Web App) support
+
+================================================================
+END OF REQUIREMENTS DOCUMENT
+================================================================

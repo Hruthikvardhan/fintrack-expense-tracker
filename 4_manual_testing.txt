@@ -1,0 +1,635 @@
+================================================================
+        FINTRACK - PERSONAL EXPENSE TRACKER
+        MANUAL TESTING DOCUMENT
+================================================================
+
+Project Name   : FinTrack - Personal Expense Tracker
+Prepared By    : [Your Name]
+Tested By      : [Your Name]
+Date           : July 2026
+Version        : 1.0
+
+Test Result Legend:
+  PASS  = Feature works as expected
+  FAIL  = Feature not working
+  SKIP  = Not tested yet
+
+================================================================
+MODULE 1 - DASHBOARD
+================================================================
+
+TEST-D-01 : Summary Cards Display
+  Steps    : Open the app
+  Expected : Balance, Income, Expense cards visible with ₹ values
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-02 : Balance Calculation
+  Steps    : Add ₹10,000 income and ₹3,000 expense
+  Expected : Balance card shows ₹7,000
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-03 : Income Count in Subtitle
+  Steps    : Add 3 income transactions
+  Expected : Income card subtitle shows "3 transaction(s)"
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-04 : Expense Count in Subtitle
+  Steps    : Add 2 expense transactions
+  Expected : Expense card subtitle shows "2 transaction(s)"
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-05 : Positive Balance Message
+  Steps    : Income > Expense
+  Expected : Balance card shows "💚 Positive balance"
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-06 : Negative Balance Message
+  Steps    : Expense > Income
+  Expected : Balance card shows "🔴 Negative balance"
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-07 : Progress Bar - No Budget Set
+  Steps    : Do not set budget
+  Expected : Progress bar shows expenses vs income percentage
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-08 : Progress Bar - Budget Set
+  Steps    : Set budget ₹20,000, spend ₹10,000
+  Expected : Progress bar shows 50%, label shows budget
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-09 : Progress Bar Color - Warning
+  Steps    : Spend 80%+ of budget
+  Expected : Progress bar turns orange/yellow
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-10 : Progress Bar Color - Danger
+  Steps    : Spend 100%+ of budget
+  Expected : Progress bar turns red
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-11 : Recent Transactions Panel
+  Steps    : Add 7 transactions
+  Expected : Only latest 5 shown in Recent panel
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-12 : Top Categories Panel
+  Steps    : Add expenses in Food, Shopping, Bills
+  Expected : Categories show with mini progress bars
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-D-13 : Empty State - No Transactions
+  Steps    : Clear all transactions
+  Expected : Empty state with 💸 icon shows in Recent panel
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+================================================================
+MODULE 2 - ADD TRANSACTION
+================================================================
+
+TEST-A-01 : Form Loads Correctly
+  Steps    : Click Add Transaction in sidebar
+  Expected : Form visible with all fields
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-02 : Default Date is Today
+  Steps    : Open Add Transaction form
+  Expected : Date field shows today's date
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-03 : Income Toggle
+  Steps    : Click Income button in type toggle
+  Expected : Income button turns green and is active
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-04 : Expense Toggle
+  Steps    : Click Expense button in type toggle
+  Expected : Expense button turns red and is active
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-05 : Validation - Empty Name
+  Steps    : Leave name blank, click Add Transaction
+  Expected : Red border on name field, error message shows
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-06 : Validation - Zero Amount
+  Steps    : Enter 0 in amount, click Add Transaction
+  Expected : Red border on amount field, error message shows
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-07 : Validation - Negative Amount
+  Steps    : Enter -500 in amount, click Add Transaction
+  Expected : Red border on amount field, error message shows
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-08 : Validation - No Date
+  Steps    : Clear date field, click Add Transaction
+  Expected : Red border on date field, error message shows
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-09 : Validation - No Category
+  Steps    : Leave category as default, click Add Transaction
+  Expected : Red border on category, error message shows
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-10 : Valid Form - Income Submit
+  Steps    : Fill all fields, type = Income, click Add
+  Expected : Success toast, form resets, go to Dashboard
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-11 : Valid Form - Expense Submit
+  Steps    : Fill all fields, type = Expense, click Add
+  Expected : Success toast, transaction saved
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-12 : Reset Button
+  Steps    : Fill some fields, click Reset
+  Expected : All fields cleared, type resets to Income
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-A-13 : Data Persists After Refresh
+  Steps    : Add a transaction, refresh the page (F5)
+  Expected : Transaction still visible in dashboard
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+================================================================
+MODULE 3 - TRANSACTION HISTORY
+================================================================
+
+TEST-H-01 : History Page Loads
+  Steps    : Click History in sidebar
+  Expected : All transactions listed newest first
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-02 : Income Color
+  Steps    : View income transaction in history
+  Expected : Amount shows in green with + sign
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-03 : Expense Color
+  Steps    : View expense transaction in history
+  Expected : Amount shows in red with - sign
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-04 : Category Icon
+  Steps    : Add Food expense, view in history
+  Expected : 🍔 icon shows next to transaction
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-05 : Search by Name
+  Steps    : Type "salary" in search box
+  Expected : Only salary transactions show
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-06 : Search by Category
+  Steps    : Type "food" in search box
+  Expected : Only food transactions show
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-07 : Filter by Category Dropdown
+  Steps    : Select "Food" from category dropdown
+  Expected : Only food transactions show
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-08 : Filter by Type - Income
+  Steps    : Select "Income" from type dropdown
+  Expected : Only income transactions show
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-09 : Filter by Type - Expense
+  Steps    : Select "Expense" from type dropdown
+  Expected : Only expense transactions show
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-10 : Filter by Date Range
+  Steps    : Set From = 2026-07-01, To = 2026-07-05
+  Expected : Only transactions in that range show
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-11 : Combined Filters
+  Steps    : Search "bill", select Expense type
+  Expected : Only bill expense transactions show
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-12 : No Results State
+  Steps    : Search for something that does not exist
+  Expected : "No transactions match filters" message shows
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-13 : Transaction Count Subtitle
+  Steps    : Apply filter that shows 3 results
+  Expected : Subtitle shows "3 transactions found"
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-14 : Delete Transaction
+  Steps    : Click 🗑️ button on any transaction
+  Expected : Confirm dialog appears
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-15 : Delete Confirm - Yes
+  Steps    : Click Delete, click OK in confirm
+  Expected : Transaction removed, toast shows, list updates
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-16 : Delete Confirm - Cancel
+  Steps    : Click Delete, click Cancel in confirm
+  Expected : Transaction NOT deleted, list unchanged
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-17 : Edit Button Opens Modal
+  Steps    : Click ✏️ button on any transaction
+  Expected : Edit modal opens with pre-filled data
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-18 : Edit - Fields Pre-filled
+  Steps    : Open edit modal
+  Expected : Name, Amount, Date, Category, Type all filled
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-19 : Edit - Save Changes
+  Steps    : Change name to "Test Edit", click Save
+  Expected : Transaction updated, modal closes, toast shows
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-20 : Edit - Validation in Modal
+  Steps    : Clear name in modal, click Save Changes
+  Expected : Error message shows inside modal
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-21 : Edit - Cancel Button
+  Steps    : Open modal, click Cancel
+  Expected : Modal closes, no changes saved
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-22 : Edit - Close X Button
+  Steps    : Open modal, click ✕
+  Expected : Modal closes without saving
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-23 : Edit - Click Outside Modal
+  Steps    : Open modal, click on dark overlay
+  Expected : Modal closes without saving
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-24 : Clear All Button
+  Steps    : Click "🗑 Clear All" button
+  Expected : Confirm dialog appears
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-H-25 : Clear All - Confirm
+  Steps    : Click Clear All, click OK
+  Expected : All transactions deleted, empty state shows
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+================================================================
+MODULE 4 - ANALYTICS
+================================================================
+
+TEST-AN-01 : Analytics Page Loads
+  Steps    : Click Analytics in sidebar
+  Expected : Two chart cards visible
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-AN-02 : Pie Chart - With Data
+  Steps    : Add expenses in 3 categories, open Analytics
+  Expected : Pie/doughnut chart shows with category colors
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-AN-03 : Pie Chart - No Data
+  Steps    : Clear all transactions, open Analytics
+  Expected : "No expense data available" message shows
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-AN-04 : Pie Chart - Legend
+  Steps    : View pie chart
+  Expected : Category names and colors shown in legend below
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-AN-05 : Pie Chart - Tooltip
+  Steps    : Hover over a pie chart slice
+  Expected : Tooltip shows category amount in ₹
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-AN-06 : Bar Chart - 6 Months
+  Steps    : Open Analytics
+  Expected : Bar chart shows last 6 months on X axis
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-AN-07 : Bar Chart - Income Bars
+  Steps    : Add income, view bar chart
+  Expected : Green bars show for income months
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-AN-08 : Bar Chart - Expense Bars
+  Steps    : Add expenses, view bar chart
+  Expected : Red bars show for expense months
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-AN-09 : Bar Chart - Tooltip
+  Steps    : Hover over a bar
+  Expected : Tooltip shows amount in ₹ format
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-AN-10 : Charts Update After Add
+  Steps    : Add new transaction, go to Analytics
+  Expected : Charts reflect new data
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-AN-11 : Charts - Dark Mode Colors
+  Steps    : Toggle dark mode, open Analytics
+  Expected : Chart text and grid match dark theme colors
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-AN-12 : Charts - Light Mode Colors
+  Steps    : Toggle light mode, open Analytics
+  Expected : Chart text and grid match light theme colors
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+================================================================
+MODULE 5 - BUDGET GOALS
+================================================================
+
+TEST-B-01 : Budget Page Loads
+  Steps    : Click Budget Goals in sidebar
+  Expected : Set Budget form and Overview cards visible
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-02 : Save Budget - Valid
+  Steps    : Enter 20000, click Save Budget
+  Expected : Success toast, budget shows in overview
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-03 : Save Budget - Zero
+  Steps    : Enter 0, click Save Budget
+  Expected : Error toast "Please enter a valid budget amount"
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-04 : Save Budget - Negative
+  Steps    : Enter -5000, click Save Budget
+  Expected : Error toast shows
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-05 : Budget Persists After Refresh
+  Steps    : Set budget ₹20000, refresh page
+  Expected : Budget still shows ₹20,000
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-06 : Monthly Expense Calculation
+  Steps    : Add ₹5000 expense this month
+  Expected : "This Month's Expenses" shows ₹5,000
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-07 : Remaining Budget
+  Steps    : Budget ₹20000, spend ₹8000
+  Expected : Remaining shows ₹12,000
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-08 : Budget Used Percentage
+  Steps    : Budget ₹20000, spend ₹10000
+  Expected : Budget Used shows 50.0%
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-09 : Warning at 80%
+  Steps    : Budget ₹10000, add expenses totaling ₹8500
+  Expected : Yellow warning box shows, warning toast appears
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-10 : Alert at 100%
+  Steps    : Budget ₹10000, add expenses totaling ₹11000
+  Expected : Red alert box shows, danger toast appears
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-11 : Previous Month Expenses Excluded
+  Steps    : Add expense with last month date
+  Expected : Not counted in current month budget
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-12 : Budget Progress Bar - Green
+  Steps    : Spend less than 80% of budget
+  Expected : Progress bar is green
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-13 : Budget Progress Bar - Orange
+  Steps    : Spend 80-99% of budget
+  Expected : Progress bar turns orange
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-B-14 : Budget Progress Bar - Red
+  Steps    : Spend 100%+ of budget
+  Expected : Progress bar turns red, max at 100% width
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+================================================================
+MODULE 6 - DARK / LIGHT MODE
+================================================================
+
+TEST-TH-01 : Default Theme is Dark
+  Steps    : Open app for first time
+  Expected : Dark background, light text
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-TH-02 : Toggle to Light Mode
+  Steps    : Click theme toggle in sidebar
+  Expected : Background turns white, text turns dark
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-TH-03 : Toggle Back to Dark Mode
+  Steps    : Click theme toggle again
+  Expected : Dark mode restored
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-TH-04 : Theme Persists After Refresh
+  Steps    : Switch to light mode, refresh page
+  Expected : Light mode still active after refresh
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-TH-05 : Toggle Label Updates
+  Steps    : Toggle theme
+  Expected : Label changes between "🌙 Dark Mode" / "☀️ Light Mode"
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+================================================================
+MODULE 7 - EXPORT CSV
+================================================================
+
+TEST-E-01 : Export With Transactions
+  Steps    : Add some transactions, click Export CSV
+  Expected : CSV file downloads automatically
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-E-02 : Export File Name
+  Steps    : Click Export CSV
+  Expected : File named fintrack-YYYY-MM-DD.csv
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-E-03 : Export CSV Contents
+  Steps    : Open downloaded CSV in Excel
+  Expected : Columns: ID, Name, Type, Category, Amount, Date
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-E-04 : Export - No Transactions
+  Steps    : Clear all, click Export CSV
+  Expected : Warning toast "No transactions to export"
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-E-05 : Export Button in Sidebar
+  Steps    : Click Export CSV in sidebar footer
+  Expected : Same export behavior
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+================================================================
+MODULE 8 - RESPONSIVE DESIGN
+================================================================
+
+TEST-R-01 : Desktop Layout (1280px)
+  Steps    : Open app in full browser
+  Expected : Sidebar visible, content on right
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-R-02 : Tablet Layout (900px)
+  Steps    : Resize browser to 900px width
+  Expected : Summary grid becomes 2 columns
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-R-03 : Mobile Layout (720px and below)
+  Steps    : Resize browser to 375px (mobile)
+  Expected : Sidebar hidden, mobile bar visible
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-R-04 : Mobile - Hamburger Menu
+  Steps    : Click ☰ on mobile
+  Expected : Sidebar slides in from left
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-R-05 : Mobile - Sidebar Overlay
+  Steps    : Open sidebar on mobile, click dark overlay
+  Expected : Sidebar slides back out
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-R-06 : Mobile - Form Layout
+  Steps    : Go to Add Transaction on mobile
+  Expected : Form fields stack to 1 column
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+TEST-R-07 : Mobile - Charts
+  Steps    : Go to Analytics on mobile
+  Expected : Charts stack vertically (1 column)
+  Result   : [ PASS / FAIL ]
+  Notes    : _______________________________________________
+
+================================================================
+TEST SUMMARY
+================================================================
+
+Total Tests    : 75
+Tests Passed   : ___
+Tests Failed   : ___
+Tests Skipped  : ___
+
+Pass Rate      : ____%
+
+Failed Tests (List here):
+1. ___________________________________________
+2. ___________________________________________
+3. ___________________________________________
+
+Tester Sign    : [Your Name]
+Test Date      : _______________
+App Version    : 1.0
+
+================================================================
+END OF MANUAL TESTING DOCUMENT
+================================================================

@@ -1,0 +1,475 @@
+================================================================
+        FINTRACK - PERSONAL EXPENSE TRACKER
+        SPRINT PLANNING DOCUMENT
+================================================================
+
+Project Name   : FinTrack - Personal Expense Tracker
+Prepared By    : [Your Name]
+Date           : July 2026
+Version        : 1.0
+
+Total Sprints  : 5
+Sprint Length  : 1 Day each (or 1 Week if part time)
+
+================================================================
+SPRINT 1 - PROJECT SETUP + DASHBOARD
+================================================================
+
+Sprint Goal:
+  Set up the project structure and build the Dashboard section
+  with summary cards and progress bar.
+
+----------------------------------
+TASK 1.1 - Project Setup
+----------------------------------
+  - Create folder: fintrack-expense-tracker
+  - Create file: expense-tracker.html
+  - Add basic HTML boilerplate (head, body, meta tags)
+  - Link Google Fonts (Syne + DM Sans)
+  - Link Chart.js CDN
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 1.2 - CSS Variables & Theme
+----------------------------------
+  - Define all CSS variables in :root
+  - Define dark mode variables
+  - Define light mode variables [data-theme="light"]
+  - Add base reset CSS (* margin:0, padding:0)
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 1.3 - App Layout (Grid)
+----------------------------------
+  - Create .app CSS grid (sidebar + main)
+  - Create .sidebar structure
+  - Create .main structure
+  - Create .topbar structure
+  - Create .content wrapper
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 1.4 - Sidebar UI
+----------------------------------
+  - Add logo section with icon
+  - Add navigation items (5 pages)
+  - Add footer with Export + Theme toggle
+  - Add active state styling for nav items
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 1.5 - Summary Cards (Dashboard)
+----------------------------------
+  - Create 3 cards: Balance, Income, Expense
+  - Style with CSS (colors, border-top, icon)
+  - Add hover animation (translateY)
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 1.6 - Progress Bar (Dashboard)
+----------------------------------
+  - Create budget bar card
+  - Add progress track and fill
+  - Add warning (warn) and danger color classes
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 1.7 - Dashboard Two Panels
+----------------------------------
+  - Recent Transactions panel (left)
+  - Top Expense Categories panel (right)
+  - Show empty state when no data
+  Status : [ ] Pending  [✅] Done
+
+Sprint 1 Review:
+  - Dashboard looks correct on desktop
+  - Summary cards show ₹0 initially
+  - Progress bar renders at 0%
+  - Empty states show correctly
+
+================================================================
+SPRINT 2 - ADD TRANSACTION FORM + LOCALSTORAGE
+================================================================
+
+Sprint Goal:
+  Build the Add Transaction form with full validation and save
+  data to localStorage.
+
+----------------------------------
+TASK 2.1 - Form Card UI
+----------------------------------
+  - Create form-card container
+  - Add form title and subtitle
+  - Style form card (background, border, radius)
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 2.2 - Type Toggle (Income/Expense)
+----------------------------------
+  - Create toggle with 2 buttons
+  - Add active--income and active--expense classes
+  - Write setType() JavaScript function
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 2.3 - Form Fields
+----------------------------------
+  - Add Name input field
+  - Add Amount number input
+  - Add Date picker (default today)
+  - Add Category dropdown with all options
+  - Style all inputs (form-input, form-select)
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 2.4 - Form Validation
+----------------------------------
+  - Write validateField() function
+  - Validate Name (not empty)
+  - Validate Amount (greater than 0)
+  - Validate Date (not empty)
+  - Validate Category (selected)
+  - Show red border on error
+  - Show error message below field
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 2.5 - Submit Transaction
+----------------------------------
+  - Write submitTransaction() function
+  - Create transaction object with all fields
+  - Add unique ID using Date.now()
+  - Push to transactions array
+  - Save to localStorage using save() function
+  - Reset form after submit
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 2.6 - localStorage Functions
+----------------------------------
+  - Write save() function
+  - Load transactions from localStorage on page load
+  - Load budget from localStorage on page load
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 2.7 - Toast Notifications
+----------------------------------
+  - Create toast-container div
+  - Write toast() function
+  - 4 types: success, error, warn, info
+  - Auto remove after 3.2 seconds
+  - Add toastIn and toastOut animations
+  Status : [ ] Pending  [✅] Done
+
+Sprint 2 Review:
+  - Form shows validation errors on empty submit
+  - Valid form saves transaction and shows toast
+  - Data persists after page refresh
+  - Reset button clears all fields
+
+================================================================
+SPRINT 3 - TRANSACTION HISTORY + CRUD
+================================================================
+
+Sprint Goal:
+  Build the History section with search, filters, edit and
+  delete functionality. Complete all CRUD operations.
+
+----------------------------------
+TASK 3.1 - Transaction List UI
+----------------------------------
+  - Create tx-item component layout
+  - Add tx-icon (category emoji)
+  - Add tx-info (name + meta)
+  - Add tx-amount (green/red)
+  - Add tx-actions (edit + delete buttons)
+  - Add slideIn animation
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 3.2 - Render Transactions
+----------------------------------
+  - Write txHTML() function
+  - Render income in green, expense in red
+  - Show category icon
+  - Format date using fmtDate()
+  - Format amount using fmt()
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 3.3 - Search Filter
+----------------------------------
+  - Add search input to filter bar
+  - Filter by transaction name
+  - Filter by category name
+  - Live filter on input event (oninput)
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 3.4 - Category and Type Filters
+----------------------------------
+  - Add category dropdown filter
+  - Add type dropdown filter (income/expense)
+  - Combine all filters in applyFilters()
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 3.5 - Date Range Filter
+----------------------------------
+  - Add From date input
+  - Add To date input
+  - Filter transactions between date range
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 3.6 - Delete Transaction
+----------------------------------
+  - Write deleteTransaction(id) function
+  - Show confirm dialog before delete
+  - Remove from transactions array
+  - Save to localStorage
+  - Re-render dashboard and history
+  - Show toast notification
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 3.7 - Edit Transaction (Modal)
+----------------------------------
+  - Create modal overlay and modal box
+  - Write openEdit(id) function
+  - Pre-fill form fields with existing data
+  - Write setEditType() function for modal toggle
+  - Write saveEdit() function with validation
+  - Write closeModal() function
+  - Close modal on overlay click
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 3.8 - Clear All Transactions
+----------------------------------
+  - Add Clear All button in history header
+  - Show confirm dialog
+  - Clear transactions array
+  - Save to localStorage
+  - Re-render all sections
+  Status : [ ] Pending  [✅] Done
+
+Sprint 3 Review:
+  - Can search and filter transactions
+  - Edit modal opens with correct data
+  - Save updates the transaction correctly
+  - Delete removes with confirmation
+  - Clear all works
+
+================================================================
+SPRINT 4 - ANALYTICS + BUDGET GOALS
+================================================================
+
+Sprint Goal:
+  Build the Analytics section with charts and the Budget Goals
+  section with alerts.
+
+----------------------------------
+TASK 4.1 - Analytics Page Layout
+----------------------------------
+  - Create charts-grid (2 columns)
+  - Create chart-card for pie chart
+  - Create chart-card for bar chart
+  - Add canvas elements for Chart.js
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 4.2 - Pie Chart (Expense by Category)
+----------------------------------
+  - Write renderPieChart() function
+  - Group expenses by category
+  - Map category to color
+  - Create doughnut chart using Chart.js
+  - Show "No data" message when empty
+  - Destroy old chart before re-rendering
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 4.3 - Bar Chart (Monthly Income vs Expense)
+----------------------------------
+  - Write renderBarChart() function
+  - Generate last 6 months labels
+  - Group income and expense per month
+  - Create bar chart with 2 datasets
+  - Green bars = income, Red bars = expense
+  - Destroy old chart before re-rendering
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 4.4 - Chart Theme Support
+----------------------------------
+  - Read CSS variables using getCSS() function
+  - Apply correct colors for dark/light mode
+  - Re-render charts when theme changes
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 4.5 - Budget Goals Page Layout
+----------------------------------
+  - Create budget-grid (2 columns)
+  - Left card: set budget form
+  - Right card: budget overview stats
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 4.6 - Save Monthly Budget
+----------------------------------
+  - Write saveBudget() function
+  - Validate budget amount (greater than 0)
+  - Save to localStorage
+  - Show success toast
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 4.7 - Budget Overview Stats
+----------------------------------
+  - Write updateBudgetSection() function
+  - Calculate current month expenses only
+  - Show budget, spent, remaining, percentage
+  - Update progress bar in budget section
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 4.8 - Budget Warning and Alert
+----------------------------------
+  - Write checkBudget() function
+  - Show warning toast when 80% is reached
+  - Show danger toast when 100% is exceeded
+  - Show/hide warning and alert boxes in UI
+  - Call checkBudget() after every transaction add
+  Status : [ ] Pending  [✅] Done
+
+Sprint 4 Review:
+  - Pie chart shows expense categories correctly
+  - Bar chart shows last 6 months data
+  - Budget saves and persists after refresh
+  - Warning shows at 80%
+  - Alert shows at 100%
+
+================================================================
+SPRINT 5 - DARK MODE + RESPONSIVE + EXPORT + POLISH
+================================================================
+
+Sprint Goal:
+  Add dark/light mode toggle, make app fully mobile responsive,
+  add CSV export and seed data. Final polish and cleanup.
+
+----------------------------------
+TASK 5.1 - Dark / Light Mode Toggle
+----------------------------------
+  - Write initTheme() function
+  - Load saved theme from localStorage
+  - Toggle data-theme attribute on html tag
+  - Update toggle label text
+  - Save theme preference to localStorage
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 5.2 - Navigation System
+----------------------------------
+  - Write navigate(id) function
+  - Show active section, hide others
+  - Update active nav item in sidebar
+  - Update page title in topbar
+  - Trigger section-specific render on navigate
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 5.3 - Mobile Responsive Layout
+----------------------------------
+  - Add mobile-bar (hamburger + title + export)
+  - Add sidebar overlay for mobile
+  - Write closeSidebar() function
+  - Add media queries for 900px and 720px
+  - Collapse sidebar off screen on mobile
+  - Slide in sidebar on hamburger click
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 5.4 - CSV Export
+----------------------------------
+  - Write exportCSV() function
+  - Create CSV string with header row
+  - Handle commas in names (wrap in quotes)
+  - Create Blob and download link
+  - Auto trigger download
+  - Show toast on success
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 5.5 - Seed Data (Demo Data)
+----------------------------------
+  - Write seedData() function
+  - Check if already seeded (localStorage flag)
+  - Add 10 realistic transactions
+  - Cover multiple categories
+  - Only runs once on first visit
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 5.6 - Dashboard Render
+----------------------------------
+  - Write renderDashboard() function
+  - Calculate balance, income, expense totals
+  - Update all summary cards
+  - Update progress bar
+  - Render recent 5 transactions
+  - Render top categories with mini bars
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 5.7 - Final UI Polish
+----------------------------------
+  - Add hover effects on all buttons
+  - Add smooth animations (fadeIn, slideIn)
+  - Add scrollbar styling
+  - Test all sections look correct
+  - Test dark and light mode
+  Status : [ ] Pending  [✅] Done
+
+----------------------------------
+TASK 5.8 - Code Cleanup
+----------------------------------
+  - Add comments to all functions
+  - Remove any console.log statements
+  - Check for any unused CSS
+  - Verify localStorage keys are consistent
+  Status : [ ] Pending  [✅] Done
+
+Sprint 5 Review:
+  - Dark/light toggle works and saves preference
+  - App works on mobile, tablet, desktop
+  - Sidebar opens/closes on mobile
+  - CSV downloads correctly
+  - Seed data loads on first visit
+  - All sections render without errors
+
+================================================================
+PROJECT COMPLETION CHECKLIST
+================================================================
+
+  [✅]  Project folder and file created
+  [✅]  All 5 sections built and working
+  [✅]  CRUD operations complete
+  [✅]  Form validation working
+  [✅]  localStorage persistence working
+  [✅]  Charts rendering correctly
+  [✅]  Budget alerts working
+  [✅]  Dark/light mode working
+  [✅]  Mobile responsive working
+  [✅]  CSV export working
+  [✅]  Toast notifications working
+  [✅]  Seed data loading on first visit
+  [✅]  Code is clean and commented
+  [✅]  Pushed to GitHub
+  [✅]  Deployed on Vercel
+
+================================================================
+END OF SPRINT PLANNING DOCUMENT
+================================================================
