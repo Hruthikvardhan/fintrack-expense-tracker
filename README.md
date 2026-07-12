@@ -18,34 +18,39 @@
 
 </div>
 
+
 ---
-
+ 
 ## 📸 Screenshots
-
-### 🌙 Dashboard — Overview
-![Dashboard](screenshots/dashboard.png)
-
-### ➕ Add Transaction
-![Add Transaction](screenshots/add-transaction.png)
-
-### 📋 Transaction History
-![History](screenshots/history.png)
-
-### 📋 Transaction List
-![Transaction List](screenshots/transaction-list.png)
-
-### 📈 Analytics & Charts
-![Analytics](screenshots/analytics.png)
-
-### 🎯 Budget Goals
-![Budget](screenshots/budget.png)
-
-### 🗂️ Sidebar & Theme Toggle
-![Sidebar](screenshots/sidebar.png)
-
-### 📱 Mobile View
-![Mobile](screenshots/mobile.png)
-
+ 
+<div align="center">
+<table>
+  <tr>
+    <td align="center"><b>🌙 Dashboard</b></td>
+    <td align="center"><b>➕ Add Transaction</b></td>
+    <td align="center"><b>📋 History</b></td>
+    <td align="center"><b>📋 Transaction List</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/dashboard.png" width="220"/></td>
+    <td><img src="screenshots/add-transaction.png" width="220"/></td>
+    <td><img src="screenshots/history.png" width="220"/></td>
+    <td><img src="screenshots/transaction-list.png" width="220"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>📈 Analytics</b></td>
+    <td align="center"><b>🎯 Budget Goals</b></td>
+    <td align="center"><b>🗂️ Sidebar</b></td>
+    <td align="center"><b>📱 Mobile View</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/analytics.png" width="220"/></td>
+    <td><img src="screenshots/budget.png" width="220"/></td>
+    <td><img src="screenshots/sidebar.png" width="220"/></td>
+    <td><img src="screenshots/mobile.png" width="220"/></td>
+  </tr>
+</table>
+</div>
 ---
 
 ## ✨ Features
