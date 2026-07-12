@@ -4,7 +4,7 @@
 ================================================================
 
 Project Name   : FinTrack - Personal Expense Tracker
-Prepared By    : [Your Name]
+Prepared By    : Hruthik Vardhan
 Date           : July 2026
 Version        : 1.0
 
@@ -186,7 +186,7 @@ After deployment your Vercel dashboard shows:
   Project Name  : fintrack-expense-tracker
   Status        : Ready (green)
   Domain        : fintrack-expense-tracker.vercel.app
-  Last Deploy   : [date and time]
+  Last Deploy   : na
   Git Branch    : main
 
   Tabs available:
@@ -270,8 +270,6 @@ SOLUTION: Wait 60 seconds. Hard refresh browser (Ctrl+Shift+R)
 
   Format  : https://[project-name].vercel.app
   Example : https://fintrack-expense-tracker.vercel.app
-
-  Add to your GitHub README:
     ## Live Demo
     https://fintrack-expense-tracker.vercel.app
 

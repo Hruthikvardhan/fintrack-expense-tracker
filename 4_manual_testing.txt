@@ -4,8 +4,8 @@
 ================================================================
 
 Project Name   : FinTrack - Personal Expense Tracker
-Prepared By    : [Your Name]
-Tested By      : [Your Name]
+Prepared By    : Hruthik Vardhan
+Tested By      : Hruthik Vardhan
 Date           : July 2026
 Version        : 1.0
 
@@ -615,19 +615,16 @@ TEST SUMMARY
 ================================================================
 
 Total Tests    : 75
-Tests Passed   : ___
-Tests Failed   : ___
-Tests Skipped  : ___
+Tests Passed   : 75
+Tests Failed   : 0
+Tests Skipped  : 0
 
-Pass Rate      : ____%
+Pass Rate      : 100%
 
-Failed Tests (List here):
-1. ___________________________________________
-2. ___________________________________________
-3. ___________________________________________
+Failed Tests (List here):na
 
-Tester Sign    : [Your Name]
-Test Date      : _______________
+Tester Sign    : Hruthik Vardhan
+Test Date      : 10/07/26
 App Version    : 1.0
 
 ================================================================

@@ -4,7 +4,7 @@
 ================================================================
 
 Project Name   : FinTrack - Personal Expense Tracker
-Prepared By    : [Your Name]
+Prepared By    : Hruthik Vardhan
 Date           : July 2026
 Version        : 1.0
 
