@@ -121,7 +121,7 @@
 ```bash
 # Just download and open in browser
 # No installation needed!
-open expense-tracker.html
+open index.html
 ```
 
 ### Option 2 — Clone Repository
@@ -134,7 +134,7 @@ git clone https://github.com/Hruthikvardhan/fintrack-expense-tracker.git
 cd fintrack-expense-tracker
 
 # Open in browser
-open expense-tracker.html
+open index.html
 # OR double click the file in file explorer
 ```
 
@@ -147,7 +147,7 @@ open expense-tracker.html
 ```
 fintrack-expense-tracker/
 │
-├── 📄 expense-tracker.html    # Entire application (HTML + CSS + JS)
+├── 📄 index.html    # Entire application (HTML + CSS + JS)
 └── 📄 README.md               # Project documentation
 ```
 
