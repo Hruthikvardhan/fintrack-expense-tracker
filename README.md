@@ -20,31 +20,37 @@
 
 ---
 
-## 📸 Preview
+## 📸 Screenshots
 
-> 🌙 Dark Mode — Clean, modern UI with smooth animations
+### 🌙 Dashboard — Overview
+![Dashboard](screenshots/dashboard.png)
 
-```
-+------------------+----------------------------------------+
-|  💰 FinTrack     |  Dashboard          [Export] [+ Add]  |
-|                  |----------------------------------------|
-|  📊 Dashboard ●  |  [Balance ₹46,522] [Income] [Expense] |
-|  ➕ Add          |  [====Progress Bar=====]  45%          |
-|  📋 History      |  [Recent Tx]    [Top Categories]       |
-|  📈 Analytics    |                                        |
-|  🎯 Budget       |                                        |
-|                  |                                        |
-|  [⬇ Export CSV] |                                        |
-|  [🌙 Dark Mode] |                                        |
-+------------------+----------------------------------------+
-```
+### ➕ Add Transaction
+![Add Transaction](screenshots/add-transaction.png)
+
+### 📋 Transaction History
+![History](screenshots/history.png)
+
+### 📋 Transaction List
+![Transaction List](screenshots/transaction-list.png)
+
+### 📈 Analytics & Charts
+![Analytics](screenshots/analytics.png)
+
+### 🎯 Budget Goals
+![Budget](screenshots/budget.png)
+
+### 🗂️ Sidebar & Theme Toggle
+![Sidebar](screenshots/sidebar.png)
+
+### 📱 Mobile View
+![Mobile](screenshots/mobile.png)
 
 ---
 
 ## ✨ Features
 
 ### 📊 Dashboard
-
 - **Total Balance** — real-time income minus expenses
 - **Income & Expense Cards** — with transaction counts
 - **Spending Progress Bar** — visual % of budget used
@@ -53,7 +59,6 @@
 - **Top Expense Categories** — with mini progress bars
 
 ### ➕ Add Transaction
-
 - Income / Expense **type toggle**
 - Fields — Name, Amount, Date, Category
 - **10 categories** — Salary, Freelance, Food, Transport, Shopping, Entertainment, Bills, Health, Education, Other
@@ -61,7 +66,6 @@
 - **Success toast** on submit + auto navigate to dashboard
 
 ### 📋 Transaction History
-
 - All transactions listed **newest first**
 - **Search** by name or category
 - **Filter** by category, type, date range
@@ -70,14 +74,12 @@
 - **Clear All** — wipe all data at once
 
 ### 📈 Analytics
-
 - **Doughnut Chart** — expense breakdown by category
 - **Bar Chart** — last 6 months income vs expense
 - Powered by **Chart.js 4.4.0**
 - Charts **adapt** to dark and light mode
 
 ### 🎯 Budget Goals
-
 - Set **monthly budget limit**
 - Tracks **current month expenses only**
 - Shows remaining budget and % used
@@ -85,13 +87,11 @@
 - **🚨 Alert** when budget exceeded
 
 ### 🌙 Dark / Light Mode
-
 - Toggle between dark and light theme
 - **Persists** after page refresh
 - Smooth **0.3s transition** between themes
 
 ### ⬇️ Export CSV
-
 - Export all transactions as **CSV file**
 - Auto named — `fintrack-YYYY-MM-DD.csv`
 - Opens in Excel or Google Sheets
@@ -100,15 +100,15 @@
 
 ## 🛠️ Built With
 
-| Technology             | Purpose                                |
-| ---------------------- | -------------------------------------- |
-| **HTML5**              | Structure and semantic markup          |
-| **CSS3**               | Styling, animations, responsive layout |
-| **Vanilla JavaScript** | Logic, CRUD, DOM manipulation          |
-| **Chart.js 4.4.0**     | Pie and bar chart rendering            |
-| **Google Fonts**       | Syne (display) + DM Sans (body)        |
-| **localStorage**       | Client-side data persistence           |
-| **Vercel**             | Deployment and hosting                 |
+| Technology | Purpose |
+|---|---|
+| **HTML5** | Structure and semantic markup |
+| **CSS3** | Styling, animations, responsive layout |
+| **Vanilla JavaScript** | Logic, CRUD, DOM manipulation |
+| **Chart.js 4.4.0** | Pie and bar chart rendering |
+| **Google Fonts** | Syne (display) + DM Sans (body) |
+| **localStorage** | Client-side data persistence |
+| **Vercel** | Deployment and hosting |
 
 > ❌ No React · No Angular · No Vue · No Bootstrap · No jQuery · No Backend · No Database
 
@@ -117,7 +117,6 @@
 ## 🚀 Getting Started
 
 ### Option 1 — Direct Open (Easiest)
-
 ```bash
 # Just download and open in browser
 # No installation needed!
@@ -125,7 +124,6 @@ open index.html
 ```
 
 ### Option 2 — Clone Repository
-
 ```bash
 # Clone the repo
 git clone https://github.com/Hruthikvardhan/fintrack-expense-tracker.git
@@ -147,8 +145,23 @@ open index.html
 ```
 fintrack-expense-tracker/
 │
-├── 📄 index.html    # Entire application (HTML + CSS + JS)
-└── 📄 README.md               # Project documentation
+├── 📄 index.html                  # Entire application (HTML + CSS + JS)
+├── 📄 README.md                   # Project documentation
+├── 📄 LICENSE                     # MIT License
+├── 📄 1_requirements_gathering.txt
+├── 📄 2_design_wireframe.txt
+├── 📄 3_sprint_planning.txt
+├── 📄 4_manual_testing.txt
+├── 📄 5_vercel_deployment.txt
+└── 📁 screenshots/
+    ├── dashboard.png
+    ├── add-transaction.png
+    ├── history.png
+    ├── transaction-list.png
+    ├── analytics.png
+    ├── budget.png
+    ├── sidebar.png
+    └── mobile.png
 ```
 
 > Single file architecture — HTML, CSS and JavaScript all in one file.
@@ -158,7 +171,6 @@ fintrack-expense-tracker/
 ## 🎯 How It Works
 
 ### Single Page Application (SPA)
-
 ```
 All 5 sections exist in HTML simultaneously
 CSS hides them with display: none
@@ -167,41 +179,37 @@ No page reloads — instant navigation ✅
 ```
 
 ### Data Flow
-
 ```
 User Action → JavaScript Function → Update Array → Save to localStorage → Re-render UI
 ```
 
 ### localStorage Keys
-
 ```javascript
-ft_transactions; // Array of all transactions (JSON)
-ft_budget; // Monthly budget limit (Number)
-ft_theme; // dark or light (String)
-ft_seeded; // First visit flag (String)
+ft_transactions  // Array of all transactions (JSON)
+ft_budget        // Monthly budget limit (Number)
+ft_theme         // dark or light (String)
+ft_seeded        // First visit flag (String)
 ```
 
 ---
 
 ## 📱 Responsive Design
 
-| Screen            | Layout                    |
-| ----------------- | ------------------------- |
-| Desktop (1280px+) | Sidebar + 3 column cards  |
-| Tablet (900px)    | Sidebar + 2 column cards  |
-| Mobile (720px-)   | Hamburger menu + 1 column |
+| Screen | Layout |
+|---|---|
+| Desktop (1280px+) | Sidebar + 3 column cards |
+| Tablet (900px) | Sidebar + 2 column cards |
+| Mobile (720px-) | Hamburger menu + 1 column |
 
 ---
 
 ## 🧪 Testing
 
 Manually tested on:
-
 - ✅ Google Chrome
 - ✅ Microsoft Edge
 
 Test cases covered:
-
 - ✅ CRUD operations
 - ✅ Form validation (empty, negative, zero)
 - ✅ Budget warning at 80%
